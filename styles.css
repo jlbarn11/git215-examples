@@ -1,0 +1,298 @@
+/* 
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------- GLOBAL/CUSTOM STYLES ---------- */
+:root{
+    /* ASU Brand Colors */
+	--wht: #fff;
+	--black: #000;
+	--maroon: #8c1d40;
+	--gold: #ffc627;
+	--blue: #00a3e0;
+	--green: #78be20;
+	--orange: #ffcf32;
+    --gray: #747474;
+    --gray1: #FAFAFA;/* open accordion panel background */ 
+    --gray2: #E8E8E8; /* background on accordion heading: hover/focus */
+    --gray3: #D0D0D0; /* border on accordion heading */
+    --gray4: #BFBFBF;
+    --gray5: #747474;
+    --gray6: #484848;
+    --gray7: #191919; /* accordion text & sidebar */
+    --visited-inline-link: #440E22;
+    --error: #B72A2A;
+    --success: #446D12;
+    --error-dk: #FF7B7D;
+    --success-dk: #78BE20;
+
+    /* ASU Fonts */
+	--fonts: Arial, sans-serif;
+
+    /* ASU Focus Shadow Style */
+    --focus-shadow: 0 0 8px #00baff;
+
+}
+
+/* Body Styles */
+body{
+    font-family: var(--fonts);
+    font-size: 1.1rem;
+    box-sizing: border-box;
+	background-color: var(--gray7); 	
+    color: var(--gray7);
+	line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+/* Decorative Background Styles */
+#background{
+	width: 100vw;
+	height: 100vh;
+	background-image: url("images/mobile-background.svg"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+    position: fixed;
+    z-index: -2;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+/* ----- Accessible hidden content styles - for screen readers ----- */
+/* found here: https://webaim.org/techniques/css/invisiblecontent/ */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/* Header, Main, Footer Styles */
+header, main, footer{
+    background-color: var(--wht);
+    width: 80%;
+    max-width: calc(1000px - 32px);
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+/* Header Styles */
+header{
+    padding-top: 32px;
+    border-top: 1px solid var(--gray4);
+}
+
+/* Link Styles */
+a{
+    display: block;
+    padding: 1rem;
+    color: var(--maroon);
+}
+
+/* Link Hover Styles */
+a:hover{
+    text-decoration: none;
+}
+
+/* Link Focus Styles */
+a:focus, a:focus-visible, a:visited:focus-visible{
+    outline-color: var(--gold);
+    outline-offset: 2px;
+    text-decoration: none;
+}
+
+/* Visited Link Styles */
+a:visited{
+    color: var(--visited-inline-link);
+}
+
+/* Shared Heading Styles */
+h1, h2{
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+/* H1 Styles */
+h1{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+/* H2 Styles */
+h2{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 8px 0;
+    background-color: var(--gold);
+    padding: 4px 8px;
+    text-align: center;
+}
+
+/* Main Section Card List Styles */
+section > ul{
+    width: calc(100% - 46px);
+    /* max-width: 300px; */
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    justify-items: center;
+}
+
+/* Card Styles */
+main li{
+    width: calc(100% - 46px);
+    max-width: 300px;
+    border: 1px solid var(--gray4);
+}
+
+li a{
+    
+}
+
+/* Image Styles */
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Paragraph Styles */
+p{
+    width: 100%;
+    max-width: 75ch;
+    margin: 0 auto;
+    padding: 16px 0;
+    line-height: 1.4;
+}
+
+/* Footer Styles */
+footer{
+    border-top: 1px solid var(--gray4);
+}
+
+/* Footer Social Media Section Styles */
+#socials{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* gap: 16px; */
+    max-width: 180px;
+    margin: 16px auto;
+    color: var(--wht);
+}
+
+/* Links to Socials */
+.social-link{
+    display: block;
+    padding: 8px 16px;
+}
+
+.social-link svg{
+    display: block;
+    /* fill: var(--gray4); */
+    width: 28px;
+    height: 32px;
+}
+
+.social-link:hover svg{
+    fill: var(--maroon);
+}
+
+.social-link:focus, .social-link:focus-visible{
+    
+}
+
+/* Footer Paragraph Styles */
+footer p{
+    padding: 16px 0;
+    text-align: center;
+}
+
+/* Footer Link Styles */
+footer p a{
+    display: inline;
+    padding: 0;
+}
+
+/* Footer Links on Focus Styles */
+footer a:focus, footer a:focus-visible{
+    outline: 2px solid var(--gold);
+}
+
+footer > p a:focus, footer > p a:focus-visible{
+    outline-offset: 4px;
+}
+
+/* for larger mobile and tablet screens */
+@media screen and (min-width: 605px){
+    /* Update Background SVG Layout */
+	#background{
+		width: 100vw;
+		background-image: url("images/tablet.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+}
+
+/* for larger tablet and smaller laptop screens */
+@media screen and (min-width: 900px){
+
+    #background{
+		display: block;
+		background-image: url("images/wide-background.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
