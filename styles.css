@@ -103,6 +103,7 @@ body{
     z-index: -2;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 /* ----- Accessible hidden content styles - for screen readers ----- */
@@ -181,30 +182,39 @@ h2{
 
 /* Main Section Card List Styles */
 section > ul{
-    width: calc(100% - 46px);
-    /* max-width: 300px; */
-    margin: 0;
+    width: 100%;
+    margin: 16px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
     gap: 16px;
     justify-items: center;
 }
 
 /* Card Styles */
 main li{
-    width: calc(100% - 46px);
+    width: calc(100% - 2px);
     max-width: 300px;
     border: 1px solid var(--gray4);
+    cursor: pointer;
+}
+
+main li:focus-within{
+    box-shadow: var(--focus-shadow);
 }
 
 li a{
-    
+    padding: 16px 8px;
+}
+
+li a:focus{
+    outline: none;
 }
 
 /* Image Styles */
 img{
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
