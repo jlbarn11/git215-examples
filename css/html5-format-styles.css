@@ -92,32 +92,6 @@ body{
     z-index: 2;
 }
 
-/* Decorative Background Styles */
-#background{
-	width: 100vw;
-	height: 100vh;
-	background-image: url("images/mobile-background.svg"); 
-	background-repeat: no-repeat;
-	background-size: cover;
-    position: fixed;
-    z-index: -2;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-}
-
-/* ----- Accessible hidden content styles - for screen readers ----- */
-/* found here: https://webaim.org/techniques/css/invisiblecontent/ */
-.sr-only {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-
 /* Header, Main, Footer Styles */
 header, main, footer{
     background-color: var(--wht);
@@ -170,97 +144,18 @@ h1{
     text-align: center;
 }
 
-/* H2 Styles */
-h2{
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin: 8px 0;
-    background-color: var(--gold);
-    padding: 4px 8px;
-    text-align: center;
+/* Embedded Code Snippet Styles */
+pre{
+    overflow: scroll;
 }
 
-/* Main Section Card List Styles */
-section > ul{
-    width: 100%;
-    margin: 16px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-    gap: 16px;
-    justify-items: center;
-}
-
-/* Card Styles */
-main li{
-    width: calc(100% - 2px);
-    max-width: 300px;
-    border: 1px solid var(--gray4);
-    cursor: pointer;
-}
-
-main li:focus-within{
-    box-shadow: var(--focus-shadow);
-}
-
-li a{
-    padding: 16px 8px;
-}
-
-li a:focus{
-    outline: none;
-}
-
-/* Image Styles */
-img{
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Paragraph Styles */
-p{
-    width: 100%;
-    max-width: 75ch;
-    margin: 0 auto;
-    padding: 16px 0;
-    line-height: 1.4;
+pre code{
+    font-family: monospace;
 }
 
 /* Footer Styles */
 footer{
     border-top: 1px solid var(--gray4);
-}
-
-/* Footer Social Media Section Styles */
-#socials{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* gap: 16px; */
-    max-width: 180px;
-    margin: 16px auto;
-    color: var(--wht);
-}
-
-/* Links to Socials */
-.social-link{
-    display: block;
-    padding: 8px 16px;
-}
-
-.social-link svg{
-    display: block;
-    /* fill: var(--gray4); */
-    width: 28px;
-    height: 32px;
-}
-
-.social-link:hover svg{
-    fill: var(--maroon);
-}
-
-.social-link:focus, .social-link:focus-visible{
-    
 }
 
 /* Footer Paragraph Styles */
@@ -270,6 +165,10 @@ footer p{
 }
 
 /* Footer Link Styles */
+footer > a{
+    text-align: center;
+}
+
 footer p a{
     display: inline;
     padding: 0;
@@ -282,27 +181,4 @@ footer a:focus, footer a:focus-visible{
 
 footer > p a:focus, footer > p a:focus-visible{
     outline-offset: 4px;
-}
-
-/* for larger mobile and tablet screens */
-@media screen and (min-width: 605px){
-    /* Update Background SVG Layout */
-	#background{
-		width: 100vw;
-		background-image: url("images/tablet.svg");
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
-
-}
-
-/* for larger tablet and smaller laptop screens */
-@media screen and (min-width: 900px){
-
-    #background{
-		display: block;
-		background-image: url("images/wide-background.svg");
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
 }
