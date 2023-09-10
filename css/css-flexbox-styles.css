@@ -114,6 +114,11 @@ a{
     color: var(--maroon);
 }
 
+main > p a{
+    display: inline;
+    padding: 0;
+}
+
 /* Link Hover Styles */
 a:hover{
     text-decoration: none;
@@ -142,6 +147,12 @@ h1{
     font-size: 2rem;
     line-height: 2.5rem;
     text-align: center;
+}
+
+/* iFrame Styles */
+iframe{
+    display: block;
+    margin: 32px auto;
 }
 
 /* Embedded Code Snippet Styles */
